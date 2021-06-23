@@ -12,13 +12,6 @@ call plug#begin('~/.vim/plugged')
   " :Neoformat <language>
   Plug 'sbdchd/neoformat'
 
-  " start: <C-n> start multicursor and add a virtual cursor + selection on the match
-  " next: <C-n> add a new virtual cursor + selection on the next match
-  " skip: <C-x> skip the next match
-  " prev: <C-p> remove current virtual cursor + selection and go back on previous match
-  " select all: <A-n> start multicursor and directly select all matches
-  Plug 'terryma/vim-multiple-cursors'
-
   Plug 'APZelos/blamer.nvim'
 
   " :Bracey
@@ -40,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
   " :Ack word_finded
+  " brew install ag
   Plug 'mileszs/ack.vim'
 
   " :Run
@@ -253,7 +247,6 @@ endif
 
 let g:coc_global_extensions = [
   \ 'coc-cmake',
-  \ 'coc-sql',
   \ 'coc-java',
   \ 'coc-git',
   \ 'coc-json',
@@ -271,12 +264,16 @@ let g:coc_global_extensions = [
   \ 'coc-terminal',
   \ 'coc-svelte',
   \ 'coc-sql',
+  \ 'coc-sh',
   \ 'coc-prettier',
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-angular',
   \ 'coc-tsserver',
   \ 'coc-explorer',
+  \ 'coc-flutter',
+  \ 'coc-htmlhint',
+  \ 'coc-html-css-support',
   \ 'coc-clangd'
   \ ]
 
@@ -352,7 +349,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Multiple cursors
 nmap <silent> <C-d> <Plug>(coc-cursors-word)*
-xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+xmap <silent> <C-d> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)
 
 " use normal command like `<leader>xi(`
 nmap <leader>x <Plug>(coc-cursors-operator)
