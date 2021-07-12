@@ -69,6 +69,7 @@ call plug#begin('~/.vim/plugged')
   " Themes
   Plug 'vim-airline/vim-airline-themes'
   Plug 'ayu-theme/ayu-vim'
+  Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -211,11 +212,10 @@ set hidden
 set shortmess=aFc
 
 " Theme
-let g:airline_theme='ayu'
 set termguicolors
-
 syntax on
-let ayucolor="mirage"
+set background=dark
+let ayucolor="mirage" 
 colorscheme ayu
 
 " Mouse configuration.
@@ -247,25 +247,29 @@ endif
 
 let g:coc_global_extensions = [
   \ 'coc-cmake',
-  \ 'coc-java',
-  \ 'coc-git',
-  \ 'coc-json',
-  \ 'coc-python',
-  \ 'coc-yaml',
-  \ 'coc-highlight',
   \ 'coc-docker',
-  \ 'coc-marketplace',
-  \ 'coc-java-lombok',
+  \ 'coc-eslint',
+  \ 'coc-git',
   \ 'coc-go',
+  \ 'coc-highlight',
+  \ 'coc-java',
+  \ 'coc-java-lombok',
+  \ 'coc-jedi',
+  \ 'coc-jest',
+  \ 'coc-json',
+  \ 'coc-yaml',
   \ 'coc-xml',
   \ 'coc-webpack',
   \ 'coc-vimlsp',
   \ 'coc-vetur',
+  \ 'coc-react-refactor',
+  \ 'coc-kotlin',
   \ 'coc-terminal',
   \ 'coc-svelte',
   \ 'coc-sql',
   \ 'coc-sh',
   \ 'coc-prettier',
+  \ 'coc-pyright',
   \ 'coc-html',
   \ 'coc-css',
   \ 'coc-angular',
@@ -305,7 +309,7 @@ nnoremap <C-right> <C-W><C-L>
 nnoremap <C-left> <C-W><C-H>
 
 " Sidebar toggle
-nnoremap <F2> :CocCommand explorer --width 30<CR>
+nnoremap <F2> :CocCommand explorer --width 20<CR>
 
 let g:coc_explorer_global_presets = {
 \   '.vim': {
