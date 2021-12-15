@@ -217,7 +217,7 @@ set background=dark
 let g:github_dark_sidebar = 0
 colorscheme github_dark
 highlight ColorColumn guibg=#272c33
-let g:airline_theme="dark"
+let g:airline_theme="minimalist"
 
 " Mouse configuration.
 set mouse=a
