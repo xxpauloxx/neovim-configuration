@@ -68,8 +68,7 @@ call plug#begin('~/.vim/plugged')
 
   " Themes
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'ayu-theme/ayu-vim'
-  Plug 'joshdick/onedark.vim'
+  Plug 'projekt0n/github-nvim-theme'
 
 call plug#end()
 
@@ -215,8 +214,10 @@ set shortmess=aFc
 set termguicolors
 syntax on
 set background=dark
-let ayucolor="mirage" 
-colorscheme ayu
+let g:github_dark_sidebar = 0
+colorscheme github_dark
+highlight ColorColumn guibg=#272c33
+let g:airline_theme="dark"
 
 " Mouse configuration.
 set mouse=a
@@ -278,7 +279,8 @@ let g:coc_global_extensions = [
   \ 'coc-flutter',
   \ 'coc-htmlhint',
   \ 'coc-html-css-support',
-  \ 'coc-clangd'
+  \ 'coc-clangd',
+  \ 'coc-omnisharp'  
   \ ]
 
 " GoTo code navigation.
@@ -309,7 +311,7 @@ nnoremap <C-right> <C-W><C-L>
 nnoremap <C-left> <C-W><C-H>
 
 " Sidebar toggle
-nnoremap <F2> :CocCommand explorer --width 20<CR>
+nnoremap <F2> :CocCommand explorer --width 50<CR>
 
 let g:coc_explorer_global_presets = {
 \   '.vim': {
