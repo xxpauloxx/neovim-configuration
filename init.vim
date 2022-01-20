@@ -1,9 +1,14 @@
-call plug#begin('~/.vim/plugged')
+" auto-install vim-plug
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
+call plug#begin('~/.vim/plugged')
   Plug 'sheerun/vim-polyglot'
   Plug 'vim-airline/vim-airline'
   Plug 'jiangmiao/auto-pairs'
-
   Plug 'mattn/webapi-vim'
 
   " :help vim-gist-setup
@@ -40,12 +45,6 @@ call plug#begin('~/.vim/plugged')
   " :RunKillAll
   Plug 'sbdchd/vim-run'
 
-  " :GV to open commit browser
-  " You can pass git log options to the command, e.g. :GV -S foobar -- plugins.
-  " :GV! will only list commits that affected the current file
-  Plug 'tpope/vim-fugitive'
-  Plug 'junegunn/gv.vim'
-
   " :Gist -p
   Plug 'mattn/gist-vim'
 
@@ -68,7 +67,7 @@ call plug#begin('~/.vim/plugged')
 
   " Themes
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'projekt0n/github-nvim-theme'
+  Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -209,14 +208,12 @@ set listchars=eol:¬,tab:→→,extends:>,precedes:<,space:.
 set list
 set hidden
 set shortmess=aFc
-
-" Theme
 set termguicolors
 syntax on
 set background=dark
-let g:github_dark_sidebar = 0
-colorscheme github_dark
-highlight ColorColumn guibg=#272c33
+
+let ayucolor="mirage"
+colorscheme ayu
 let g:airline_theme="minimalist"
 
 " Mouse configuration.
@@ -226,13 +223,6 @@ set mouse=a
 let &colorcolumn="80,".join(range(80,80),",")
 
 let g:blamer_enabled = 1
-
-let g:GitGutterEnable = 1
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_highlight_linenrs = 1
 
 " ~/.gitconfig
 let g:gist_use_password_in_gitconfig = 1
@@ -311,7 +301,7 @@ nnoremap <C-right> <C-W><C-L>
 nnoremap <C-left> <C-W><C-H>
 
 " Sidebar toggle
-nnoremap <F2> :CocCommand explorer --width 50<CR>
+nnoremap <F2> :CocCommand explorer --width 25<CR>
 
 let g:coc_explorer_global_presets = {
 \   '.vim': {
