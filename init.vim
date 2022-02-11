@@ -45,6 +45,9 @@ call plug#begin('~/.vim/plugged')
   " :RunKillAll
   Plug 'sbdchd/vim-run'
 
+  " Janet programming language
+  Plug 'bakpakin/janet.vim'
+
   " :Gist -p
   Plug 'mattn/gist-vim'
 
@@ -212,7 +215,7 @@ set termguicolors
 syntax on
 set background=dark
 
-let ayucolor="mirage"
+let ayucolor="dark"
 colorscheme ayu
 let g:airline_theme="minimalist"
 
@@ -253,24 +256,18 @@ let g:coc_global_extensions = [
   \ 'coc-webpack',
   \ 'coc-vimlsp',
   \ 'coc-vetur',
-  \ 'coc-react-refactor',
-  \ 'coc-kotlin',
   \ 'coc-terminal',
   \ 'coc-svelte',
   \ 'coc-sql',
-  \ 'coc-sh',
   \ 'coc-prettier',
-  \ 'coc-pyright',
   \ 'coc-html',
   \ 'coc-css',
-  \ 'coc-angular',
   \ 'coc-tsserver',
   \ 'coc-explorer',
   \ 'coc-flutter',
   \ 'coc-htmlhint',
   \ 'coc-html-css-support',
-  \ 'coc-clangd',
-  \ 'coc-omnisharp'  
+  \ 'coc-clangd'
   \ ]
 
 " GoTo code navigation.
