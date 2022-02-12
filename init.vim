@@ -267,7 +267,9 @@ let g:coc_global_extensions = [
   \ 'coc-flutter',
   \ 'coc-htmlhint',
   \ 'coc-html-css-support',
-  \ 'coc-clangd'
+  \ 'coc-clangd',
+  \ 'coc-marketplace',
+  \ 'coc-clojure'
   \ ]
 
 " GoTo code navigation.

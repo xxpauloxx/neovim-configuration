@@ -52,6 +52,16 @@
       "__pycache__",
       "venv"
     ],
+    "clojure-lsp": {
+      "command": "zsh",
+      "args": ["-c", "clojure-lsp"],
+      "filetypes": ["clojure"],
+      "rootPatterns": ["project.clj"],
+      "additionalSchemes": ["jar", "zipfile"],
+      "trace.server": "verbose",
+      "initializationOptions": {
+      }
+    }
     "explorer.previewAction.onHover": false,
     "explorer.file.column.indent.indentLine": true,
     "explorer.file.hiddenRules": {
