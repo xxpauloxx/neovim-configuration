@@ -61,7 +61,7 @@
       "trace.server": "verbose",
       "initializationOptions": {
       }
-    }
+    },
     "explorer.previewAction.onHover": false,
     "explorer.file.column.indent.indentLine": true,
     "explorer.file.hiddenRules": {
