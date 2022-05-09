@@ -215,7 +215,7 @@ set termguicolors
 syntax on
 set background=dark
 
-let ayucolor="dark"
+let ayucolor="mirage"
 colorscheme ayu
 let g:airline_theme="minimalist"
 
